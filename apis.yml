@@ -8,8 +8,7 @@ type: Index
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
+tags: []
 created: '2025-01-08'
 modified: '2026-03-16'
 url: >-
@@ -24,8 +23,7 @@ apis:
       and use the ...
     humanURL: >-
       https://storybook.js.org/docs/writing-stories/mocking-data-and-modules/mocking-network-requests
-    tags:
-      - API
+    tags: []
     properties:
       - type: Documentation
         url: >-
