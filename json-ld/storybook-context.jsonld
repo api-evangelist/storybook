@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "@vocab": "https://storybook.js.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "UIComponent": {
+      "@id": "https://storybook.js.org/schema/UIComponent",
+      "@type": "@id"
+    },
+    "Story": "https://storybook.js.org/schema/Story",
+    "ComponentMeta": "https://storybook.js.org/schema/ComponentMeta",
+    "ArgType": "https://storybook.js.org/schema/ArgType",
+    "Addon": "https://storybook.js.org/schema/Addon",
+    "name": "schema:name",
+    "description": "schema:description",
+    "title": "schema:name",
+    "component": {
+      "@id": "https://storybook.js.org/schema/component",
+      "@type": "@id"
+    },
+    "args": "https://storybook.js.org/schema/args",
+    "argTypes": "https://storybook.js.org/schema/argTypes",
+    "parameters": "https://storybook.js.org/schema/parameters",
+    "decorators": "https://storybook.js.org/schema/decorators",
+    "tags": {
+      "@id": "schema:keywords",
+      "@container": "@list"
+    },
+    "play": "https://storybook.js.org/schema/playFunction",
+    "loaders": "https://storybook.js.org/schema/loaders",
+    "control": "https://storybook.js.org/schema/control",
+    "options": "https://storybook.js.org/schema/options",
+    "required": {
+      "@id": "schema:required",
+      "@type": "xsd:boolean"
+    },
+    "framework": "schema:runtimePlatform",
+    "version": "schema:softwareVersion",
+    "license": {
+      "@id": "doap:license",
+      "@type": "@id"
+    },
+    "repository": {
+      "@id": "doap:repository",
+      "@type": "@id"
+    },
+    "npmPackage": {
+      "@id": "https://storybook.js.org/schema/npmPackage",
+      "@type": "@id"
+    }
+  }
+}

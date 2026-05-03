@@ -1,0 +1,178 @@
+vocabulary:
+  name: Storybook Vocabulary
+  description: >-
+    Domain vocabulary for Storybook, the frontend workshop for building,
+    documenting, and testing UI components. Covers story format concepts,
+    testing capabilities, addons, and the MCP server.
+  version: '1.0'
+  created: '2026-05-02'
+  modified: '2026-05-02'
+
+domains:
+  - name: Stories
+    description: Core Storybook story and component format concepts
+    terms:
+      - term: story
+        definition: >-
+          A named component state captured as an exported function or object in a
+          CSF story file. Stories are the core unit of Storybook: each story
+          renders the component with specific props to document and test one visual state.
+      - term: CSF
+        definition: >-
+          Component Story Format. An open standard for writing Storybook stories
+          based on ES6 modules. A CSF file has a default export (meta) and named
+          exports (stories). CSF 3 (current) supports object-style stories.
+        aliases: [Component Story Format]
+      - term: meta
+        definition: >-
+          The default export in a CSF story file, defining the component being
+          documented, shared configuration, and optional title. Controls sidebar
+          organization and shared args/argTypes/parameters.
+        aliases: [default export, component story meta]
+      - term: args
+        definition: >-
+          An object of prop values passed to a component when rendering a story.
+          Args are the primary mechanism for making components dynamic in Controls
+          and for defining story-specific state.
+        aliases: [story args, component props]
+      - term: argTypes
+        definition: >-
+          Configuration objects defining how individual args appear in the Controls
+          panel. Allow customizing the control input type, options, descriptions,
+          and table display for each prop.
+      - term: parameters
+        definition: >-
+          Static metadata objects passed to stories and addons at the meta or story
+          level. Parameters configure addons, layout, backgrounds, and other non-arg behavior.
+      - term: decorator
+        definition: >-
+          A function wrapping a story with additional rendering context (such as
+          a provider component, CSS reset, or mock data context). Decorators can
+          be applied at the story, meta, or global preview level.
+      - term: play function
+        definition: >-
+          An async function in a story that executes user interactions after the
+          story renders, enabling automated interaction tests. Uses @storybook/test
+          (built on Vitest) to simulate clicks, typing, and other events.
+
+  - name: Testing
+    description: Storybook testing capabilities and concepts
+    terms:
+      - term: interaction testing
+        definition: >-
+          Testing component behavior through simulated user interactions using the
+          play function and @storybook/test utilities. Tests run in the browser
+          using the Storybook test runner.
+        aliases: [component interaction tests]
+      - term: accessibility testing
+        definition: >-
+          Automated detection of accessibility violations in component stories using
+          the @storybook/addon-a11y addon, which runs axe-core against rendered stories.
+        aliases: [a11y testing, axe testing]
+      - term: visual testing
+        definition: >-
+          Screenshot-based comparison testing detecting unintentional visual regressions
+          in component stories. Typically powered by Chromatic or similar visual
+          testing services.
+        aliases: [snapshot testing, visual regression]
+      - term: test runner
+        definition: >-
+          The @storybook/test-runner package that converts all stories into executable
+          tests run with Playwright, enabling CI integration of story interaction tests.
+      - term: portable stories
+        definition: >-
+          The ability to import and use Storybook stories in external test frameworks
+          (Jest, Vitest, Playwright) outside of the Storybook UI using the
+          composeStories or composeStory utilities.
+
+  - name: Addons
+    description: Storybook addon system concepts
+    terms:
+      - term: addon
+        definition: >-
+          A package extending Storybook with additional functionality. Addons integrate
+          with the Storybook panel UI, toolbar, decorators, and story parameters.
+          Common addons include Controls, Actions, Viewport, Backgrounds, and Docs.
+      - term: Controls
+        definition: >-
+          The @storybook/addon-controls addon providing a dynamic GUI for editing
+          story args in real-time, enabling interactive component exploration without
+          writing code.
+        aliases: [addon-controls, knobs replacement]
+      - term: Actions
+        definition: >-
+          The @storybook/addon-actions addon capturing and displaying event handler
+          calls (onClick, onChange, etc.) in the Storybook Actions panel.
+        aliases: [addon-actions]
+      - term: Docs
+        definition: >-
+          The @storybook/addon-docs addon generating documentation pages from CSF
+          stories, combining component API tables (ArgTypes), live examples, and
+          custom Markdown/MDX content.
+        aliases: [addon-docs, autodocs]
+      - term: autodocs
+        definition: >-
+          Automatic documentation page generation triggered by the 'autodocs' tag
+          in component meta. Creates an interactive docs page with all component
+          stories, a props table, and descriptions.
+
+  - name: MCP
+    description: Storybook Model Context Protocol server concepts
+    terms:
+      - term: MCP server
+        definition: >-
+          The Storybook MCP server (@storybook/addon-mcp or @storybook/mcp) exposing
+          component knowledge to AI agents via the Model Context Protocol at
+          http://localhost:6006/mcp when the dev server is running.
+        aliases: [addon-mcp, Storybook MCP]
+      - term: list-all-documentation
+        definition: >-
+          MCP tool that returns an index of all components and documentation entries
+          available in the running Storybook instance.
+      - term: get-documentation
+        definition: >-
+          MCP tool that delivers detailed component information including props,
+          sample stories, and usage guidance for a specific component.
+      - term: get-documentation-for-story
+        definition: >-
+          MCP tool that retrieves complete story code and associated documentation
+          for a specific named story.
+      - term: run-story-tests
+        definition: >-
+          MCP tool that executes component tests on specific stories, including
+          accessibility checks, and provides remediation guidance on failures.
+      - term: preview-stories
+        definition: >-
+          MCP tool that renders story previews in the AI chat interface or returns
+          Storybook links for visual verification.
+
+  - name: Architecture
+    description: Storybook architectural and infrastructure concepts
+    terms:
+      - term: framework adapter
+        definition: >-
+          A Storybook package integrating with a specific frontend framework.
+          Examples: @storybook/react, @storybook/vue3, @storybook/angular,
+          @storybook/svelte, @storybook/web-components.
+      - term: builder
+        definition: >-
+          The bundler Storybook uses to build the component preview. Supports
+          Vite (default, faster) and Webpack.
+      - term: manager
+        definition: >-
+          The Storybook application shell (sidebar, toolbar, panels) configured via
+          manager.js. Separate from the component preview iframe.
+      - term: preview
+        definition: >-
+          The iframe rendering component stories, configured via preview.js.
+          Isolated from the manager to prevent style conflicts.
+      - term: Chromatic
+        definition: >-
+          The SaaS visual testing and review platform for Storybook, developed by
+          the Storybook maintainers. Provides automated visual regression testing
+          and collaborative UI review.
+      - term: design system
+        definition: >-
+          A collection of reusable UI components and design standards documented
+          and tested in Storybook. Storybook is the de facto tool for publishing
+          and maintaining design systems.

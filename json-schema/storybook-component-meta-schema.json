@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/storybook/json-schema/storybook-component-meta-schema.json",
+  "title": "Storybook Component Meta (CSF Default Export)",
+  "description": "Schema for the default export in a Storybook CSF story file. The meta object defines the component being documented and shared configuration applied to all stories in the file.",
+  "type": "object",
+  "required": ["component"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Sidebar path and story name. Use '/' for grouping, e.g. 'Components/Button'. Optional when using auto-title feature."
+    },
+    "component": {
+      "description": "The component being documented. Enables automatic argTypes extraction.",
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tags applied to all stories in this file. Use 'autodocs' to auto-generate docs page.",
+      "examples": [["autodocs"], ["experimental"], ["autodocs", "stable"]]
+    },
+    "args": {
+      "type": "object",
+      "description": "Default argument values shared by all stories in this file",
+      "additionalProperties": true
+    },
+    "argTypes": {
+      "type": "object",
+      "description": "ArgType definitions overriding inferred types. Controls how args appear in the Storybook Controls panel.",
+      "additionalProperties": {
+        "$ref": "#/$defs/ArgType"
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Shared parameters applied to all stories in this file"
+    },
+    "decorators": {
+      "type": "array",
+      "description": "Decorator functions applied to all stories in this file"
+    },
+    "loaders": {
+      "type": "array",
+      "description": "Data loading functions applied to all stories"
+    },
+    "excludeStories": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "string", "description": "RegExp pattern" }
+      ],
+      "description": "Named exports to exclude from Storybook story listings"
+    },
+    "includeStories": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "string", "description": "RegExp pattern" }
+      ],
+      "description": "Named exports to include as stories (when you want to exclude non-story exports)"
+    }
+  },
+  "$defs": {
+    "ArgType": {
+      "type": "object",
+      "description": "ArgType definition controlling how a prop appears in the Controls panel",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Documentation text for this prop"
+        },
+        "control": {
+          "oneOf": [
+            { "type": "string", "enum": ["text", "number", "boolean", "color", "date", "select", "radio", "check", "file", "range", "object"] },
+            {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "options": { "type": "array" },
+                "min": { "type": "number" },
+                "max": { "type": "number" },
+                "step": { "type": "number" }
+              }
+            }
+          ],
+          "description": "Control input type for the Controls panel"
+        },
+        "options": {
+          "type": "array",
+          "description": "List of valid values for enum props (select, radio, check controls)"
+        },
+        "type": {
+          "type": "object",
+          "description": "TypeScript or PropTypes type information",
+          "properties": {
+            "required": { "type": "boolean" },
+            "summary": { "type": "string" }
+          }
+        },
+        "table": {
+          "type": "object",
+          "description": "ArgsTable display configuration",
+          "properties": {
+            "disable": { "type": "boolean" },
+            "category": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

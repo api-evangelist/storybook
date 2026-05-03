@@ -1,0 +1,54 @@
+{
+  "title": "Storybook CSF (Component Story Format) File Structure",
+  "description": "Documentation of the Component Story Format used in Storybook story files (.stories.js/ts/jsx/tsx)",
+  "type": "module",
+  "sections": [
+    {
+      "name": "Default Export (Meta)",
+      "description": "The default export is the component meta, defining the component and shared configuration",
+      "fields": [
+        { "name": "title", "type": "string", "description": "Sidebar path like 'Components/Button'. Optional with auto-title." },
+        { "name": "component", "type": "Component", "description": "The component being documented", "required": true },
+        { "name": "tags", "type": "string[]", "description": "['autodocs'] enables auto-generated docs page" },
+        { "name": "args", "type": "object", "description": "Default arg values for all stories" },
+        { "name": "argTypes", "type": "object", "description": "ArgType configurations for Controls panel" },
+        { "name": "parameters", "type": "object", "description": "Shared parameters (layout, backgrounds, etc.)" },
+        { "name": "decorators", "type": "Decorator[]", "description": "Wrapper functions applied to all stories" }
+      ]
+    },
+    {
+      "name": "Named Exports (Stories)",
+      "description": "Each named export is a story representing a component state",
+      "fields": [
+        { "name": "args", "type": "object", "description": "Story-specific arg values overriding defaults" },
+        { "name": "parameters", "type": "object", "description": "Story-specific parameter overrides" },
+        { "name": "play", "type": "async function", "description": "Interaction test function using @storybook/test" },
+        { "name": "name", "type": "string", "description": "Custom story display name (defaults to export name)" },
+        { "name": "decorators", "type": "Decorator[]", "description": "Story-specific decorator wrappers" },
+        { "name": "tags", "type": "string[]", "description": "Story-specific tags" },
+        { "name": "loaders", "type": "Loader[]", "description": "Async data loading functions" }
+      ]
+    },
+    {
+      "name": "Story Render Patterns",
+      "description": "How stories are rendered in CSF",
+      "patterns": [
+        {
+          "name": "Default render (no render function)",
+          "description": "Component is rendered directly with args as props",
+          "example": "export const Primary = { args: { label: 'Button', variant: 'primary' } }"
+        },
+        {
+          "name": "Custom render function",
+          "description": "Story provides a custom render function for complex setups",
+          "example": "export const WithProvider = { render: (args) => <Provider><Button {...args} /></Provider> }"
+        },
+        {
+          "name": "Interaction test story",
+          "description": "Story with play function for automated interaction testing",
+          "example": "export const Filled = { play: async ({ canvasElement }) => { await userEvent.click(screen.getByRole('button')) } }"
+        }
+      ]
+    }
+  ]
+}

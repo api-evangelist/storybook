@@ -1,0 +1,57 @@
+{
+  "description": "Example Storybook Button component story in Component Story Format (CSF)",
+  "filename": "Button.stories.tsx",
+  "content": {
+    "defaultExport": {
+      "title": "Components/Button",
+      "component": "Button",
+      "tags": ["autodocs"],
+      "args": {
+        "onClick": "fn()"
+      },
+      "argTypes": {
+        "backgroundColor": {
+          "control": "color"
+        },
+        "size": {
+          "control": {
+            "type": "select"
+          },
+          "options": ["small", "medium", "large"]
+        }
+      }
+    },
+    "namedExports": {
+      "Primary": {
+        "args": {
+          "primary": true,
+          "label": "Button"
+        }
+      },
+      "Secondary": {
+        "args": {
+          "label": "Button"
+        }
+      },
+      "Large": {
+        "args": {
+          "size": "large",
+          "label": "Button"
+        }
+      },
+      "Small": {
+        "args": {
+          "size": "small",
+          "label": "Button"
+        }
+      },
+      "WithInteraction": {
+        "args": {
+          "primary": true,
+          "label": "Click me"
+        },
+        "play": "async ({ canvasElement }) => { const canvas = within(canvasElement); const button = canvas.getByRole('button', { name: /click me/i }); await userEvent.click(button); await expect(button).toHaveFocus(); }"
+      }
+    }
+  }
+}

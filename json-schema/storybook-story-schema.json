@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/storybook/json-schema/storybook-story-schema.json",
+  "title": "Storybook Story (CSF)",
+  "description": "Schema for a Storybook Component Story Format (CSF) story definition. Stories describe individual visual states of UI components and are the core unit of Storybook documentation and testing.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Display name of the story, shown in the Storybook sidebar"
+    },
+    "args": {
+      "type": "object",
+      "description": "Default argument values for the component in this story. Override the component default args.",
+      "additionalProperties": true
+    },
+    "parameters": {
+      "$ref": "#/$defs/Parameters",
+      "description": "Static story metadata used to configure addons and Storybook behavior"
+    },
+    "decorators": {
+      "type": "array",
+      "description": "Array of decorator functions wrapping the story render function",
+      "items": {
+        "type": "string",
+        "description": "Decorator function reference (as string identifier)"
+      }
+    },
+    "play": {
+      "type": "string",
+      "description": "Async function executing user interactions for interaction testing"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tags for categorizing stories and controlling test inclusion"
+    },
+    "loaders": {
+      "type": "array",
+      "description": "Async data loading functions run before the story renders"
+    }
+  },
+  "required": ["name"],
+  "$defs": {
+    "Parameters": {
+      "type": "object",
+      "description": "Storybook story parameters for configuring addons and behavior",
+      "properties": {
+        "layout": {
+          "type": "string",
+          "enum": ["centered", "fullscreen", "padded"],
+          "description": "Story layout in the Storybook canvas"
+        },
+        "backgrounds": {
+          "type": "object",
+          "description": "Background color options for the story canvas",
+          "properties": {
+            "default": { "type": "string" },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "value": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "viewport": {
+          "type": "object",
+          "description": "Viewport dimensions for the story canvas",
+          "properties": {
+            "defaultViewport": { "type": "string" }
+          }
+        },
+        "a11y": {
+          "type": "object",
+          "description": "Accessibility testing configuration",
+          "properties": {
+            "disable": { "type": "boolean" },
+            "config": { "type": "object" }
+          }
+        },
+        "docs": {
+          "type": "object",
+          "description": "Documentation page configuration",
+          "properties": {
+            "description": {
+              "type": "object",
+              "properties": {
+                "story": { "type": "string" },
+                "component": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

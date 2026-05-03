@@ -1,0 +1,32 @@
+{
+  "description": "Example MCP tool call to list all Storybook component documentation",
+  "transport": "HTTP (Streamable HTTP)",
+  "endpoint": "http://localhost:6006/mcp",
+  "request": {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "tools/call",
+      "params": {
+        "name": "list-all-documentation",
+        "arguments": {}
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Available components and documentation:\n\n## Components\n- Button (Components/Button) - 5 stories\n- Input (Components/Input) - 3 stories\n- Modal (Components/Modal) - 4 stories\n- Card (Components/Card) - 2 stories\n\n## Pages\n- Home (Pages/Home) - 1 story\n- Login (Pages/Login) - 2 stories"
+        }
+      ]
+    }
+  }
+}
