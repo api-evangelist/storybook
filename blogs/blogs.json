@@ -1,0 +1,13 @@
+{
+  "repo": "storybook",
+  "feeds": [
+    {
+      "source": "https://storybook.js.org/blog",
+      "feed_url": "https://storybook.js.org/blog/rss",
+      "saved": 10,
+      "title": "Storybook Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:37:12Z"
+}
