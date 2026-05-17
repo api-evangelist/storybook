@@ -57,7 +57,7 @@ apis:
         url: https://github.com/storybookjs/storybook
       - type: NPM
         url: https://www.npmjs.com/package/storybook
-      - type: Changelog
+      - type: ChangeLog
         url: https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md
       - type: Tutorials
         url: https://storybook.js.org/tutorials/
