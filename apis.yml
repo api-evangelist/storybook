@@ -99,7 +99,7 @@ common:
     url: https://storybook.js.org/tutorials/
   - type: Integrations
     url: https://storybook.js.org/integrations/
-  - type: Releases
+  - type: ReleaseNotes
     url: https://storybook.js.org/releases
   - type: GitHubOrg
     url: https://github.com/storybookjs
