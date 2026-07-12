@@ -89,6 +89,8 @@ apis:
       - type: Blog
         url: https://storybook.js.org/blog/storybook-mcp-for-react/
 common:
+  - type: DomainSecurity
+    url: security/storybook-domain-security.yml
   - type: Website
     url: https://storybook.js.org/
   - type: Documentation
