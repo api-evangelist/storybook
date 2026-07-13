@@ -9,17 +9,17 @@
       "method": "feed"
     },
     {
-      "source": "https://www.npmjs.com/package/@storybook/addon-mcp",
-      "error": "HTTPError"
-    },
-    {
       "source": "https://storybook.js.org/docs",
       "feed_url": "https://storybook.js.org/docs",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://www.npmjs.com/package/@storybook/addon-mcp",
+      "error": "HTTPError"
     }
   ],
-  "post_count": 17,
-  "fetched": "2026-06-27T12:03:07Z"
+  "post_count": 18,
+  "fetched": "2026-07-11T11:50:51Z"
 }
