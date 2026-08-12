@@ -101,6 +101,9 @@ apis:
       - type: Blog
         url: https://storybook.js.org/blog/storybook-mcp-for-react/
 common:
+  - type: License
+    name: MIT
+    url: https://github.com/storybookjs/storybook/blob/next/LICENSE
   - type: DomainSecurity
     url: security/storybook-domain-security.yml
   - type: Website
