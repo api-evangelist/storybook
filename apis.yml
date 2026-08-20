@@ -30,6 +30,16 @@ tags:
   - Component Documentation
   - Component Testing
   - Design Systems
+  - Front-End Development
+  - Open-Source
+  - React
+  - UI Components
+  - Visual Testing
+tags_raw:
+  - Accessibility Testing
+  - Component Documentation
+  - Component Testing
+  - Design Systems
   - Frontend Development
   - Open Source
   - React
@@ -52,6 +62,15 @@ apis:
       system documentation for engineering and design teams.
     humanURL: https://storybook.js.org/
     tags:
+      - Accessibility Testing
+      - Component Documentation
+      - Component Testing
+      - Design Systems
+      - Front-End Development
+      - Open-Source
+      - UI Components
+      - Visual Testing
+    tags_raw:
       - Accessibility Testing
       - Component Documentation
       - Component Testing
@@ -85,6 +104,12 @@ apis:
       stories, and running component tests. Supports React projects in Storybook 10.3+.
     humanURL: https://storybook.js.org/docs/ai/mcp/overview
     tags:
+      - Artificial Intelligence
+      - Component Testing
+      - MCP
+      - Open-Source
+      - React
+    tags_raw:
       - AI
       - Component Testing
       - MCP
