@@ -10,6 +10,18 @@ description: >-
   enabling AI agents to understand components, generate stories, and run tests.
   The project is open source (MIT) and maintained by the storybookjs GitHub organization.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: MIT
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -126,6 +138,16 @@ apis:
       - type: Blog
         url: https://storybook.js.org/blog/storybook-mcp-for-react/
 common:
+  - type: IssueTracker
+    url: https://github.com/storybookjs/storybook/issues
+  - type: Releases
+    url: https://github.com/storybookjs/storybook/releases
+  - type: SecurityPolicy
+    url: https://github.com/storybookjs/storybook/blob/next/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/storybookjs/storybook/blob/next/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/storybookjs/storybook/blob/next/CONTRIBUTING.md
   - type: License
     name: MIT
     url: https://github.com/storybookjs/storybook/blob/next/LICENSE
