@@ -43,7 +43,7 @@ tags:
   - Component Testing
   - Design Systems
   - Front-End Development
-  - Open-Source
+  - Open Source
   - React
   - UI Components
   - Visual Testing
@@ -57,6 +57,7 @@ tags_raw:
   - React
   - UI Components
   - Visual Testing
+  - Open-Source
 created: '2025-01-08'
 modified: '2026-05-02'
 url: >-
@@ -79,7 +80,7 @@ apis:
       - Component Testing
       - Design Systems
       - Front-End Development
-      - Open-Source
+      - Open Source
       - UI Components
       - Visual Testing
     tags_raw:
@@ -91,6 +92,7 @@ apis:
       - Open Source
       - UI Components
       - Visual Testing
+      - Open-Source
     properties:
       - type: Documentation
         url: https://storybook.js.org/docs
@@ -119,7 +121,7 @@ apis:
       - Artificial Intelligence
       - Component Testing
       - MCP
-      - Open-Source
+      - Open Source
       - React
     tags_raw:
       - AI
@@ -128,6 +130,7 @@ apis:
       - Model Context Protocol
       - Open Source
       - React
+      - Open-Source
     properties:
       - type: Documentation
         url: https://storybook.js.org/docs/ai/mcp/overview
